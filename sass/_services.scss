@@ -1,0 +1,12 @@
+@import "mixins";
+
+.services {
+  padding: 100px 0 50px 0;
+  position: relative;
+  min-height: 523px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

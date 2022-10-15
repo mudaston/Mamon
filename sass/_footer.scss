@@ -1,0 +1,29 @@
+.footer {
+  height: 100px;
+  width: 100%;
+  background: #f7f7f7;
+  margin: auto 0 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(37%);
+  }
+  &__nav {
+    min-width: 216px;
+    height: 100%;
+  }
+  &__socials {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    padding: 20px;
+  }
+}

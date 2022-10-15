@@ -1,0 +1,132 @@
+$main-color: #5528FF;
+$main-gray: #B2B2B2;
+$main-black: #202020;
+
+$maxWidth: 1920;
+
+@mixin adaptive-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  background-color: $main-color;
+  color: #ffffff;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: box-shadow .2s linear;
+  max-height: 24px;
+  &:hover {
+    box-shadow: #5528FF 0 0 20px 0;
+  }
+}
+
+.decor-line {
+  &:before {
+    content: '';
+    position: absolute;
+    width: 600%;
+    height: 1px;
+    background: $main-gray;
+    top: 0;
+    left: -1000px;
+    opacity: .4;
+  }
+  &:after {
+    content: 'OUR SERVICES';
+    position: absolute;
+    font-weight: 300;
+    color: $main-gray;
+    flex: 14px;
+    top: -12.6px;
+    left: -30px;
+    background: #ffffff;
+    padding: 0 30px;
+  }
+  &__clients {
+    &:after {
+      content: 'OUR CLIENTS';
+    }
+  }
+  &__team {
+    &:after {
+      content: 'OUR TEAM';
+    }
+  }
+}
+
+.item {
+  max-width: 410px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 80px 0;
+  &__img {
+    width: 80px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__header {
+    font-weight: 400;
+    @include adaptive-font(28,18);
+    line-height: 1;
+    margin: 0;
+  }
+  &__descr {
+    max-width: 300px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 2;
+    color: $main-gray;
+    margin: 17px 0 0 0;
+  }
+  &__wrapper {
+    margin: 0 0 0 60px;
+  }
+}
+
+.team-item {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+/*  margin: 0 100px 60px 0;*/
+  &__img {
+    max-width: 100px;
+    height: 100px;
+    img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 135px;
+  }
+  &__header {
+    font-weight: 700;
+    @include adaptive-font(28,24);
+    line-height: 1;
+    margin: 0;
+  }
+  &__profession {
+    font-weight: 400;
+    font-size: 14px;
+    margin: 11px 0 0 0;
+    color: $main-gray;
+  }
+}
