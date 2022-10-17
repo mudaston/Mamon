@@ -19,7 +19,7 @@
 
 </p>
 
-Layout practice (without adaptation).
+Layout practice (with adaptation).
 
 <br/>
 
